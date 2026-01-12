@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>7S IQ Application Form</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+*{box-sizing:border-box}
+body{
+  background:#e6e6e6;
+  font-family:"Times New Roman",serif;
+}
+
+/* A4 Page */
+.page{
+  width:794px;
+  min-height:1123px;
+  background:#fdfbf7;
+  margin:20px auto;
+  padding:40px 45px;
+  box-shadow:0 0 8px rgba(0,0,0,.25);
+}
+
+/* ---------- HEADER ---------- */
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  width:90px;
+  height:90px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;  
+  transform:scale(1.2); 
+}
+
+.heading{
+  text-align:center;
+  flex:1;
+}
+
+.heading h1{
+  margin:0;
+  font-size:22px;
+  letter-spacing:1px;
+}
+
+.heading h2{
+  margin-top:8px;
+  font-size:26px;
+}
+
+.photo{
+  width:110px;
+  height:100px;
+  border:1px solid #c8a47c;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+}
+
+/* ---------- TOP GRID (INSERTED HERE) ---------- */
+.top-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1.5fr;
+  column-gap:20px;
+  row-gap:6px;
+  margin-top:25px;
+  margin-bottom:20px;
+}
+
+.head{
+  font-weight:bold;
+  font-size:14px;
+}
+
+.box{
+  border:1px solid #cfa18d;
+  height:32px;
+}
+
+.emp-box{
+  border:1px solid #cfa18d;
+  height:32px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding-left:8px;
+  font-size:14px;
+}
+
+.emp-box input{
+  width:14px;
+  height:14px;
+}
+
+/* ---------- SECTIONS ---------- */
+section{margin-top:25px}
+h3{font-size:16px;margin-bottom:6px}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+td,th{
+  border:1px solid #c8a47c;
+  height:34px;
+  padding:5px 8px;
+  font-size:14px;
+}
+
+th{
+  font-weight:normal;
+  text-align:center;
+}
+
+/* REMOVE INPUT BOX LOOK INSIDE TABLE */
+table input,
+section input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  font-family: "Times New Roman", serif;
+  font-size: 14px;
+  padding: 0 4px;
+}
+
+/* keep checkbox & radio normal */
+input[type="checkbox"],
+input[type="radio"]{
+  width: auto;
+  height: auto;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  margin-top:25px;
+  font-size:13px;
+}
+
+.contact{
+  display:flex;
+  gap:25px;
+  margin-top:10px;
+}
+
+/* PRINT */
+@media print{
+  body{background:none}
+  .page{
+    margin:0;
+    box-shadow:none;
+    page-break-after:always;
+  }
+}
+</style>
+</head>
+
+<body>
+  
+
+<form id="applicationForm">
+<!-- ================= PAGE 1 ================= -->
+<div class="page">
+
+<header>
+   <div class="logo">
+  <img src="loogo.jpeg" alt="Company Logo">
+</div>
+
+  <div class="heading">
+    <h1>7S IQ PRIVATE LIMITED</h1>
+    <h2>Application Form</h2>
+  </div>
+
+  <div class="photo" id="photoBox">
+  <span id="photoText">photo</span>
+  <img id="photoPreview" hidden>
+  <input
+    type="file"
+    id="photoInput"
+    name="photo"
+    accept="image/*"
+    hidden
+  >
+</div>
+
+</header>
+
+<!-- ===== TOP GRID SECTION ===== -->
+<div class="top-grid">
+  <div class="head">Date of Application</div>
+  <div class="head">Position</div>
+  <div class="head">Employment Type</div>
+
+  <input class="box" type="date" name="dateOfApplication">
+
+  <input class="box" type="text" name="position">
+
+  <div class="emp-box">
+    <label><input type="checkbox" name="employmentType" value="Full-Time"> Full-Time</label>
+    <label><input type="checkbox" name="employmentType" value="Course"> Course</label>
+    <label><input type="checkbox" name="employmentType" value="Intern"> Intern</label>
+  </div>
+</div>
+
+<section>
+<h3>Personal Information</h3>
+<table>
+
+<tr>
+  <td colspan="3">
+    <input type="text" name="fullName" placeholder="Full Name">
+  </td>
+  <td>
+    <input type="text" name="nationality" placeholder="Nationality">
+  </td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    <input type="text" name="address" placeholder="Address">
+  </td>
+</tr>
+
+<tr>
+  <td><input type="text" name="phone" placeholder="Phone"></td>
+  <td><input type="email" name="email" placeholder="Email"></td>
+  <td colspan="2"><input type="date" name="dob"></td>
+</tr>
+
+<tr>
+  <td><input type="text" name="bloodGroup" placeholder="Blood Group"></td>
+  <td colspan="2"></td>
+  <td><input type="number" name="experience" placeholder="Years of Work"></td>
+</tr>
+
+<tr>
+  <td colspan="4">
+    <input type="text" name="aadhar" placeholder="Aadhar No">
+  </td>
+</tr>
+
+</table>
+</section>
+
+<section>
+<h3>Educational Background</h3>
+<table>
+
+<tr>
+<th>Degree / Course</th>
+<th>University / Institute</th>
+<th>Year</th>
+<th>Grade</th>
+<th>City</th>
+</tr>
+
+<tr>
+<td><input name="degree"></td>
+<td><input name="institute"></td>
+<td><input name="year"></td>
+<td><input name="grade"></td>
+<td><input name="city"></td>
+</tr>
+
+<tr>
+<td><input name="degree"></td>
+<td><input name="institute"></td>
+<td><input name="year"></td>
+<td><input name="grade"></td>
+<td><input name="city"></td>
+</tr>
+
+</table>
+</section>
+
+<section>
+<h3>Employment History</h3>
+<table>
+
+<tr>
+<th>Company</th>
+<th>Position</th>
+<th>Year</th>
+<th>Reason</th>
+</tr>
+
+<tr>
+<td><input name="company"></td>
+<td><input name="position"></td>
+<td><input name="year"></td>
+<td><input name="reason"></td>
+</tr>
+
+</table>
+</section>
+
+
+<section>
+<h3>Skills & Training</h3>
+<table>
+
+<tr>
+  <th>Skill & Training Achievement(s)</th>
+  <th>Level</th>
+  <th>Year</th>
+  <th>Institute</th>
+</tr>
+
+<tr>
+  <td><input type="text" name="skill" placeholder="Skill"></td>
+  <td><input type="text" name="level" placeholder="Level"></td>
+  <td><input type="text" name="year" placeholder="Year"></td>
+  <td><input type="text" name="institute" placeholder="Institute"></td>
+</tr>
+
+<tr>
+  <td><input type="text" name="skill"></td>
+  <td><input type="text" name="level"></td>
+  <td><input type="text" name="year"></td>
+  <td><input type="text" name="institute"></td>
+</tr>
+
+</table>
+</section>
+
+<footer>
+<p>
+Attach your resume and portfolio to this job application form.<br>
+Send it via email or hand it over to the Human Resource Office at
+No 20, 6<sup>th</sup> school street, jafferkhanpet, chennai-600083
+</p><span>📞 +91 7397593704</span>
+<span>✉️ info@7siq.com</span>
+<span>🌐 www.7siq.com</span>
+</footer>
+
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+<div class="page">
+
+<header>
+  <div class="heading">
+    <h1>7S IQ PRIVATE LIMITED</h1>
+    <h2>Application Form</h2>
+  </div>
+</header>
+
+<section>
+<h3>Family Details</h3>
+<table>
+
+<tr><th>Name</th><th>Relationship</th><th>Occupation</th></tr>
+
+<tr>
+<td><input name="name"></td>
+<td><input name="relation"></td>
+<td><input name="occupation"></td>
+</tr>
+
+<tr>
+<td><input name="name"></td>
+<td><input name="relation"></td>
+<td><input name="occupation"></td>
+</tr>
+
+</table>
+</section>
+
+
+<section>
+<h3>Emergency Contact</h3>
+<table>
+
+<tr>
+  <th>Name</th>
+  <th>Relationship</th>
+  <th>Occupation</th>
+  <th>Qualification</th>
+  <th>City</th>
+</tr>
+
+<tr>
+  <td><input type="text" name="name"></td>
+  <td><input type="text" name="relationship"></td>
+  <td><input type="text" name="occupation"></td>
+  <td><input type="text" name="qualification"></td>
+  <td><input type="text" name="city"></td>
+</tr>
+
+</table>
+</section>
+
+
+<section>
+<h3>Joining Details</h3>
+<table>
+
+<tr>
+  <td>Joining Date</td>
+  <td><input type="date" name="joiningDate"></td>
+</tr>
+
+<tr>
+  <td>Fees</td>
+  <td><input type="number" name="fees"></td>
+</tr>
+
+<tr>
+  <td>First Installment Date</td>
+  <td><input type="date" name="firstInstallment"></td>
+</tr>
+
+<tr>
+  <td>Second Installment Date</td>
+  <td><input type="date" name="secondInstallment"></td>
+</tr>
+
+<tr>
+  <td>Third Installment Date</td>
+  <td><input type="date" name="thirdInstallment"></td>
+</tr>
+
+</table>
+</section>
+
+<section>
+<table>
+
+<tr>
+  <td>Company Name</td>
+  <td><input type="text" name="name"></td>
+</tr>
+
+<tr>
+  <td>Receiving Person</td>
+  <td><input type="text" name="receiver"></td>
+</tr>
+
+<tr>
+  <td>Receiving Person Signature</td>
+  <td><input type="text" name="receiverSignature"></td>
+</tr>
+
+<tr>
+  <td>HR Name & Signature</td>
+  <td><input type="text" name="hrSignature"></td>
+</tr>
+
+</table>
+</section>
+<center>
+
+<footer>
+<p>
+Attach your resume and portfolio to this job application form.<br>
+Send it via email or hand it over to the Human Resource Office at
+No 20, 6<sup>th</sup> school street, jafferkhanpet, chennai-600083
+</p>
+
+<div class="contact">
+  <center>
+<span>📞 +91 7397593704</span>
+<span>✉️ info@7siq.com</span>
+<span>🌐 www.7siq.com</span>
+</div>
+</center>
+
+</footer>
+</center>
+
+<div style="text-align:center; margin-top:20px; display:flex; justify-content:center; gap:15px; align-items:center;">
+
+  <!-- Resume Upload -->
+  <input
+    type="file"
+    name="resume"
+    accept=".pdf,.doc,.docx"
+    required
+    style="font-size:13px;"
+  >
+
+  <!-- Submit Button -->
+  <button type="submit" id="submitBtn"
+    style="padding:8px 25px;border:1px solid #c8a47c;background:black;color:white;">
+    Submit
+  </button>
+
+  <!-- Download Button -->
+  <button type="button" id="downloadBtn"
+    style="padding:8px 25px;border:1px solid #c8a47c;background:green;color:white;">
+    Download
+  </button>
+
+</div>
+
+
+</div>
+<script>
+document.getElementById("applicationForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const data = {};
+
+  formData.forEach((value, key) => {
+    if (data[key]) {
+      if (!Array.isArray(data[key])) {
+        data[key] = [data[key]];
+      }
+      data[key].push(value);
+    } else {
+      data[key] = value;
+    }
+  });
+
+  try {
+    const res = await fetch("http://localhost:5000/api/apply", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+    alert("Saved Successfully ✅");
+    this.reset();
+
+  } catch (err) {
+    alert("Server not running ❌");
+    console.error(err);
+  }
+});
+</script>
+
+</form>
+
+<script>
+const photoBox = document.getElementById("photoBox");
+const photoInput = document.getElementById("photoInput");
+const photoPreview = document.getElementById("photoPreview");
+const photoText = document.getElementById("photoText");
+
+// Open file dialog on click
+photoBox.addEventListener("click", () => {
+  photoInput.click();
+});
+
+// Show preview
+photoInput.addEventListener("change", () => {
+  const file = photoInput.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = () => {
+    photoPreview.src = reader.result;
+    photoPreview.hidden = false;
+    photoText.style.display = "none";
+  };
+  reader.readAsDataURL(file);
+});
+</script>
+
+<script src="js/photo.js"></script>
+</body>
+</html>
