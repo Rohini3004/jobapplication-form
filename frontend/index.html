@@ -531,7 +531,7 @@ document.getElementById("applicationForm").addEventListener("submit", async func
   });
 
   try {
-    const res = await fetch("http://localhost:5000/api/apply", {
+    const res = await fetch("/api/apply", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
@@ -542,11 +542,12 @@ document.getElementById("applicationForm").addEventListener("submit", async func
     this.reset();
 
   } catch (err) {
-    alert("Server not running ❌");
+    alert("Server error ❌");
     console.error(err);
   }
 });
 </script>
+
 
 </form>
 
